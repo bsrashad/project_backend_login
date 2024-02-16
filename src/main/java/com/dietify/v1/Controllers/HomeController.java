@@ -36,7 +36,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String landing() {
-		return "index";
+		return "home";
 	}
 
 	@GetMapping("/index")

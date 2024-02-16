@@ -15,5 +15,4 @@ public class WeekResponse {
 		this.week = week;
 	}
 	
-    // getters and setters
 }

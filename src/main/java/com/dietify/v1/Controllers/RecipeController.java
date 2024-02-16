@@ -16,7 +16,7 @@ import com.dietify.v1.DTO.RecipeDetails.Recipe;
 
 
 @RestController
-@RequestMapping("/api/recipes")
+@RequestMapping("/recipes")
 public class RecipeController {
 
     @Value("${apikey}")  // Define your API key in application.properties

@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,9 +33,9 @@ public class MealController {
 
 	@GetMapping("/day")
 	public ResponseEntity<DayResponse> getDayMeals(
-			@RequestParam Optional<String> targetCalories,
-			@RequestParam Optional<String> diet,
-			@RequestParam Optional<String> exclusions) {
+                              @RequestParam Optional<String> targetCalories,
+                              @RequestParam Optional<String> diet,
+                              @RequestParam Optional<String> exclusions){
 		RestTemplate rt = new RestTemplate();
 
 		URI uri = UriComponentsBuilder.fromHttpUrl(baseURL)
@@ -83,8 +85,8 @@ public class MealController {
 				updateMealSourceUrls(weekResponse.getWeek());
 			}
 		}
-
 		return responseEntity;
+
 	}
 
 	private void updateMealSourceUrls(Week week) {
